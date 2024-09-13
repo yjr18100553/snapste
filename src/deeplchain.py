@@ -1,8 +1,6 @@
-# This file can be empty, it just indicates that this directory should be treated as a package
 import os
 import json
 import asyncio
-import time
 from datetime import datetime
 from colorama import *
 
@@ -25,15 +23,16 @@ def _banner():
  ██║   ██║   ███████║╚█████╔╝██║  ██║╚███╔███╔╝
  ╚═╝   ╚═╝   ╚══════╝ ╚════╝ ╚═╝  ╚═╝ ╚══╝╚══╝  """ 
     print(Fore.GREEN + Style.BRIGHT + banner + Style.RESET_ALL)
-    print(hju + f" Hamster Kombat Auto Bot")
-    print(mrh + f" NOT FOR SALE = Free to use")
+    print(hju + f" Snapster Auto Bot")
+    print(mrh + f" FREE TO USE = Join us on {hju}t.me/@deeplchain")
     print(mrh + f" before start please '{hju}git pull{mrh}' to update bot")
+    log_line()
 
 def _clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def read_config():
-    config_path = os.path.join(os.path.dirname(__file__), '../settings.json')
+    config_path = os.path.join(os.path.dirname(__file__), '../config.json')
     with open(config_path, 'r') as file:
         try:
             config_content = file.read()
@@ -52,16 +51,6 @@ def log(message, **kwargs):
 
 def log_line():
     print(pth + "~" * 60)
-
-def load_fake_file(filepath):
-    with open(filepath, 'r') as file:
-        fake_ips = json.load(file)
-    return fake_ips
-
-def awak():
-    _clear()
-    _banner()
-    log_line()
 
 async def countdown_timer(seconds):
     while seconds:

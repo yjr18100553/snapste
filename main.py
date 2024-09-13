@@ -1,9 +1,14 @@
-COMING SOON: SNAPSTER $SNAPS ON OUR GITHUB
+import sys
+import asyncio
 
-make sure you follow us on our telegram channel and group to get the latest information about this airdrop.
+from src.core import main
+from src.deeplchain import mrh, log, _banner,_clear
 
-Register : https://t.me/snapster_bot?start=ref_K0S1qpNL2RIGlx
-
-STAY TUNE ON
-- Channel : https://t.me/Deeplchain
-- Group : https://t.me/Deeplchainsup
+if __name__ == "__main__":
+    _clear()
+    _banner()
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        log(mrh + f"Bot interrupted by user.")
+        sys.exit()
